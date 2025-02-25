@@ -1,11 +1,38 @@
 //complete this code
-class Animal {}
+class Person {
+	constructor(name,age)
+	{
+			this._name = name;
+			this._age = age;
+	}
+	get name(){
+		return this._name;
+	}
+	set name(name){
+		this._name = name;
+	}
+	get age(){
+		return this._age;
+	}
+	set age(age)
+	{
+		this._age = age;
+	}
+}
 
-class Dog extends Animal {}
+class Student extends Person {
+	study(){
+		console.log(`${this.name} is studying`)
+	}
+}
 
-class Cat extends Animal {}
+class Teacher extends Person {
+	teach(){
+		console.log(`${this.name} is teaching`)
+	}
+}
 
 // Do not change the code below this line
-window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+window.Person = Person;
+window.Student = Student;
+window.Teacher = Teacher;
