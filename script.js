@@ -1,38 +1,44 @@
 //complete this code
-class Person {
-	constructor(name,age)
-	{
-			this._name = name;
-			this._age = age;
+class Rectangle {
+	constructor(width, height){
+		this._width = width;
+		this._height = height;
 	}
-	get name(){
-		return this._name;
+
+	get width(){
+		return this._width;
 	}
-	set name(name){
-		this._name = name;
+
+	get height(){
+		return this._height;
 	}
-	get age(){
-		return this._age;
-	}
-	set age(age)
-	{
-		this._age = age;
+
+	getArea(){
+		return this.width * this.height;
 	}
 }
 
-class Student extends Person {
-	study(){
-		console.log(`${this.name} is studying`)
+class Square extends Rectangle {
+	constructor(side){
+		super(side, side);
+	}
+	
+	getPerimeter(){
+		return 4 * this.width;
 	}
 }
 
-class Teacher extends Person {
-	teach(){
-		console.log(`${this.name} is teaching`)
-	}
-}
+const rectangle = new Rectangle(5, 10);
+console.log(rectangle.width);
+console.log(rectangle.height);
+console.log(rectangle.getArea());
+
+const square = new Square(7);
+console.log(square.width);
+console.log(square.height);
+console.log(square.getArea());
+console.log(square.getPerimeter());
 
 // Do not change the code below this line
-window.Person = Person;
-window.Student = Student;
-window.Teacher = Teacher;
+window.Rectangle = Rectangle;
+window.Square = Square;
